@@ -1,2 +1,19 @@
 1. screener.pdf shows the hardware wiring.
 2. Used items: wemos d1 mini, buzzer, i2c LCD, RC522 (SPI)
+
+// Functions:
+// 1. connecting to wifi (if not, reboot)
+// 2. RFID reading
+// 3. query the software gateway by MQTT (will try 3 times)
+//    success of publishing is confirmed by the message from software gateway
+//    Remark: I only use QoS=0 because I don't have to verify QoS=1.
+// 4. Output data on LCD screen and generate a sound.
+//    4 cases:
+//    case 0: UID is not in the private database of NCNU
+//    case 1: No temperature value corresponding to this UID today
+//    case 2: Temperature is normal for this UID  
+//    case 3: Over temerature for this UID
+// 5. MQTT publish topic: "TEMP_CHECK"
+//    payload format: {"mac":MACaddress,"id":UID}
+// 6. MQTT subscribe topic: "TEMP_CHECK/device_macaddress"
+//    payload format: none, just one byte (0, 1, 2, or 3) 
