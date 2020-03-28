@@ -1,0 +1,2 @@
+1. auto.pdf shows the hardware wiring of auto-thermometer
+2. used items: raspberry pi 3B, buzzer, US-100 (ultrasound distance measuring), MG996r servo, RC522 (rfid reader, SPI)
