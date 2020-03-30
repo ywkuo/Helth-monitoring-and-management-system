@@ -17,3 +17,5 @@
 //    payload format: {"mac":MACaddress,"id":UID}
 // 6. MQTT subscribe topic: "TEMP_CHECK/device_macaddress"
 //    payload format: none, just one byte (0, 1, 2, or 3) 
+
+3. components_2.jpg: a wemos d1 mini, a RFID reader, a buzzer, and an I2C LCD.
