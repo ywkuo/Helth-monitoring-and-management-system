@@ -1,0 +1,24 @@
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+CREATE TABLE `TEMP_CHECK` (
+  `sequence` int(11) NOT NULL COMMENT 'PK',
+  `mac` char(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'mac address',
+  `station` char(50) COLLATE utf8mb4_unicode_ci DEFAULT '0' COMMENT 'station number',
+  `id` int(11) NOT NULL DEFAULT '0' COMMENT 'CARD ID',
+  `result` char(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '查詢結果',
+  `updatetime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '上傳時間'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+ALTER TABLE `TEMP_CHECK`
+  ADD PRIMARY KEY (`sequence`);
+
+ALTER TABLE `TEMP_CHECK`
+  MODIFY `sequence` int(11) NOT NULL AUTO_INCREMENT COMMENT 'PK', AUTO_INCREMENT=447;
+COMMIT;
+
