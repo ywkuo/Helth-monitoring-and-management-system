@@ -1,0 +1,13 @@
+{
+"sql":"localhost",
+"sql_name":"root",
+"sql_passwd":"",
+"db":"ywkuo",
+"sql_port":3306,
+"mqtt":"broker.hivemq.com",
+"mqtt_port":1883,
+"mqtt_check":"NCNU_TEMP_CHECK",
+"mqtt_submit":"NCNU_TEMP",
+"mqtt_name":"",
+"mqtt_passwd":""
+}
