@@ -1,0 +1,3 @@
+Two programs are developed for easy debug.
+temp_submit.py is used for process message from auto-thermometers.
+temp_ask.py is used to process messages from card screeners.
