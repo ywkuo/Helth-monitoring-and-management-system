@@ -1,0 +1,77 @@
+1. run raspberry pi configuration to enable camera, ssh, vnc, i2c, spi, ...
+reboot
+2. Disabling the blank screen forever
+In /etc/lightdm/lightdm.conf 
+add (root)
+
+[SeatDefaults]
+xserver-command=X -s 0 -dpms
+
+Rotate screen
+In /boot/config.txt
+add:
+
+display_rotate=2
+
+3.  packages to be installed
+sudo apt-get update
+sudo apt-get dist-upgrade
+
+pip3 install -r requirements.txt
+
+
+sudo apt install libhdf5-103
+
+sudo apt install libatlas-base-dev
+sudo apt-get install libjasper-dev
+sudo apt-get install libqt4-test
+
+sudo apt-get install libqtgui4 
+
+sudo apt-get install libhdf5-dev
+sudo apt-get install libhdf5-serial-dev
+
+
+sudo apt-get install tesseract-ocr
+
+sudo apt-get install libgpiod2
+
+4. 
+https://en.m.fontke.com/font/27492444/download/
+download: TW-Kai-98_1.ttf   (You can use your own font)
+put int in /home/pi/temp_submit
+
+
+5. create /home/pi/images
+directory to store photos. (check the OCR result)
+
+6.  
+download submit.py to /home/pi/temp_submit/
+*** modify the following part.
+in "class Network_agent():"
+find     def start(self):
+This function contains configurations. Replace XXX with your own setting.
+***
+
+
+Then you can run the main program by
+
+run LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libatomic.so.1 python3 submit.py 
+ 
+
+Check if RFID is OK. Then ultrasonic sensor, servo motor, and image.
+In /home/pi/images, we can find the captured images. Be sure that the screen in the middle.
+ 
+
+7. Auto-start
+
+mkdir -p .config/lxsession/LXDE-pi
+nano .config/lxsession/LXDE-pi/autostart
+
+
+add this line
+@lxterminal -e /home/pi/temp_submit/run.sh
+
+
+
+
